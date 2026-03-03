@@ -28,8 +28,8 @@ jobs:
 
       - name: Build with Gradle
         run: |
-          gradle assembleRelease
-          gradle bundleRelease
+          ./gradlew assembleRelease
+          ./gradlew bundleRelease
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
