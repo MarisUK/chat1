@@ -38,10 +38,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android-apk-artifacts
-          path: '**/app/build/android/**/*.apk'
+          path: '/Uploaded/new.apk'
 
       - name: Upload AAB build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: android-aab-artifacts
-          path: '**/app/build/android/**/*.aab'
+          path: '/Uploaded/new.aab'
