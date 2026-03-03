@@ -34,8 +34,14 @@ jobs:
           ./gradlew assembleRelease
           ./gradlew bundleRelease
 
-      - name: Upload build artifacts
+      - name: Upload APK build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: android-build-artifacts
-          path: app/build/outputs/
+          name: android-apk-artifacts
+          path: app/build/outputs/apk/release/*.apk
+
+      - name: Upload AAB build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-aab-artifacts
+          path: app/build/outputs/bundle/release/*.aab
