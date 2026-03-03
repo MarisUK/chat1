@@ -1,0 +1,7 @@
+// Root project build.gradle
+
+plugins {
+    id 'com.android.application' version '7.3.1' apply false
+}
+
+// Additional configurations can go here

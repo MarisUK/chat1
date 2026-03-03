@@ -1,0 +1,3 @@
+include ':app'
+
+// Additional gradle settings can go here
