@@ -22,7 +22,7 @@ jobs:
           java-version: '17'
 
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.5'
 
@@ -32,7 +32,7 @@ jobs:
           gradle bundleRelease
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: android-build-artifacts
           path: app/build/outputs/
