@@ -23,25 +23,21 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.5'
 
       - name: Ensure Gradlew is executable
         run: chmod +x gradlew
 
-      - name: Build with Gradle
-        run: |
-          ./gradlew assembleRelease
-          ./gradlew bundleRelease
+      - name: Build APK & AAB
+        run: ./gradlew assembleRelease bundleRelease
 
-      - name: Upload APK build artifacts
+      - name: Upload APK artifacts
         uses: actions/upload-artifact@v4
         with:
           name: android-apk-artifacts
-          path: '**/app/build/outputs/apk/**/*.apk'
+          path: app/build/outputs/apk/release/*.apk
 
-      - name: Upload AAB build artifacts
+      - name: Upload AAB artifacts
         uses: actions/upload-artifact@v4
         with:
           name: android-aab-artifacts
-          path: '**/app/build/outputs/bundle/**/*.aab'
+          path: app/build/outputs/bundle/release/*.aab
